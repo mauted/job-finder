@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Filtered Job Listings</title>
+</head>
+<body>
+    <h1>Job Listings</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Location</th>
+                <th>Company</th>
+                <th>Description</th>
+                <th>Apply</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for job in jobs %}
+                <tr>
+                    <td>{{ job.title }}</td>
+                    <td>{{ job.location }}</td>
+                    <td>{{ job.company }}</td>
+                    <td>{{ job.description }}</td>
+                    <td><a href="{{ job.url }}" target="_blank">Apply</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
